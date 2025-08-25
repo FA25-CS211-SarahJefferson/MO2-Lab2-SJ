@@ -92,6 +92,7 @@ def dictionary_demo():
 
     # Search for a value by key
     key = "name"
+    
     if key in d:
         print(f"Value for key '{key}':", d[key])
     else:
