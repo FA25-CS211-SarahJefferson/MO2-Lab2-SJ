@@ -1,5 +1,6 @@
 # Imports array module
 import array
+import time
 
 
 #Array
@@ -83,7 +84,40 @@ def dict():
     print("Final dictionary:", d)
 
 
+def compare_array_vs_dict():
+    print("\nComparison: Array vs. Dictionary")
+
+    # Setup
+    arr = array.array('i', range(10000))
+    lst = list(range(10000))
+
+    # Time insertion at the beginning
+    start = time.time()
+    arr.insert(0, -1)
+    arr_insert_time = time.time() - start
+
+    start = time.time()
+    lst.insert(0, -1)
+    list_insert_time = time.time() - start
+
+    print(f"Array insert at beginning: {arr_insert_time:.6f} seconds")
+    print(f"List insert at beginning: {list_insert_time:.6f} seconds")
+
+    # Time deletion from the beginning
+    start = time.time()
+    arr.pop(0)
+    arr_delete_time = time.time() - start
+
+    start = time.time()
+    lst.pop(0)
+    list_delete_time = time.time() - start
+
+    print(f"Array delete from beginning: {arr_delete_time:.6f} seconds")
+    print(f"List delete from beginning: {list_delete_time:.6f} seconds")
+
+
 # Main
 if __name__ == "__main__":
     array_demo()
     dict()
+    compare_array_vs_dict()

@@ -143,4 +143,4 @@ def compare_array_vs_list():
 if __name__ == "__main__":
     array_demo()
     dictionary_demo()
-    compare_array_vs_list()
+    compare_array_vs_dict()
